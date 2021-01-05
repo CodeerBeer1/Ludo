@@ -101,14 +101,15 @@ public class Figure : MonoBehaviour
     {
         animation.Play("Skeleton|Walking");
         float offset = group.path[position].offsetValue;
-        while(transform.position != group.path[position].transform.position + new Vector3(0, offset, 0))
+        while(true)
         {
             transform.position = Vector3.MoveTowards(transform.position, group.path[position].transform.position + new Vector3(0, offset, 0), Time.deltaTime * 2f);
-            yield return null;
+            //yield return null;
         }
+
         if(position == 62)
         {
-            transform.Rotate(0, 90, 0);
+            transform.eulerAngles = Vector3.RotateTowards(transform.eulerAngles, transform.eulerAngles + new Vector3(0, 90, 0),  Time.deltaTime, 0f);
         }
         else
         {

@@ -7,9 +7,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] List<Player> players;
     private Player active;
+    private GameCamera camera;
 
     void Start()
     {
+
+        camera = GameObject.Find("Camera").GetComponent<GameCamera>();
         active = players[1];
         for(int i = 0; i < active.group.figures.Count; i++)
         {
@@ -56,7 +59,7 @@ public class GameManager : MonoBehaviour
                 if (figure.inSlot != true)
                 {
                     figure.Forward(steps);
-                    print("test");
+                    StartCoroutine(camera.FollowFigure(figure));
                 }
                    
             }

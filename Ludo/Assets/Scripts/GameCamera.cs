@@ -24,9 +24,15 @@ public class GameCamera : MonoBehaviour
 
     }
 
-    public void FollowFigure()
+    public IEnumerator FollowFigure(Figure figure)
     {
-        print("test");
+        while(true)
+        {
+            transform.position = figure.transform.position;
+            transform.rotation = figure.transform.rotation;
+            yield return null;
+        }
+        
     }
 
     public void Top()

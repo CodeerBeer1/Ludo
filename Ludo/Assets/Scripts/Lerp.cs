@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Center : MonoBehaviour
+public class Lerp : MonoBehaviour
 {
     public Material material;
     [SerializeField] [Range(0f, 10f)] float lerpTime;
@@ -11,12 +11,17 @@ public class Center : MonoBehaviour
     int colorIndex = 0;
     float t = 0f;
     int length;
+
+    void Start()
+    {
+
+    }
     void Update()
     {
-        Lerp();
+        LerpColor();
     }
 
-    void Lerp()
+    void LerpColor()
     {
         material.color = Color.Lerp(material.color, color[colorIndex], lerpTime * Time.deltaTime);
         t = Mathf.Lerp(t, 1f, lerpTime * Time.deltaTime);
@@ -30,4 +35,10 @@ public class Center : MonoBehaviour
             colorIndex = (colorIndex >= length) ? 0 : colorIndex;
         }
     }
+
+    public Color[] GiveColors()
+    {
+        return color;
+    }
+
 }

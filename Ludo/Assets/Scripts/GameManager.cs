@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     {
 
         camera = GameObject.Find("Camera").GetComponent<GameCamera>();
-        active = players[0];
+        active = players[1];
         for(int i = 0; i < active.group.figures.Count; i++)
         {
             active.group.figures[i].clickable = true;

@@ -26,12 +26,31 @@ public class GameCamera : MonoBehaviour
 
     public IEnumerator FollowFigure(Figure figure)
     {
-        while(true)
+        transform.rotation = figure.transform.rotation;
+        transform.eulerAngles += new Vector3(30, 45, 0);
+
+        if (figure.group.name == "Blue")
         {
-            transform.position = figure.transform.position;
-            transform.rotation = figure.transform.rotation;
-            yield return null;
+            print("blue");
+            while (true)
+            {
+                transform.position = figure.transform.position + new Vector3(-0.75f, 0.75f, -0.75f);
+
+                yield return null;
+            }
         }
+
+        if (figure.group.name == "Red")
+        {
+            print("red");
+            while (true)
+            {
+                transform.position = figure.transform.position + new Vector3(-0.75f, 0.75f, 0.75f);
+
+                yield return null;
+            }
+        }
+        
         
     }
 

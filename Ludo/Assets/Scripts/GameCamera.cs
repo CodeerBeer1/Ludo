@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,33 +27,18 @@ public class GameCamera : MonoBehaviour
 
     public IEnumerator FollowFigure(Figure figure)
     {
+        float right = figure.transform.right.x;
+        float forward = figure.transform.forward.z;
+        Vector3 start = transform.position = new Vector3(right, -0.8f, forward);
 
-        if (figure.group.name == "Blue")
+        while (figure.moving)
         {
-            transform.position = figure.transform.position - figure.transform.right;
-            while (figure.moving)
-            {
-                transform.position = figure.transform.position;
-               // transform.position = figure.transform.position + figure.transform.up;
-                transform.LookAt(figure.transform);
-                print("dd");
-                yield return null;
-            }
-        }
-
-        if (figure.group.name == "Red")
-        {
-            transform.rotation = figure.transform.rotation;
-            transform.eulerAngles += new Vector3(30, 45, 0);
-            while (figure.moving)
-            {
-                transform.position = figure.transform.position + new Vector3(-0.75f, 0.75f, 0.75f);
-
-                yield return null;
-            }
+            transform.position = figure.transform.position - start;
+            transform.LookAt(figure.transform);
+            yield return null;
         }
         yield return new WaitForSeconds(2);
-        Top();
+        //Top();
         
         
     }

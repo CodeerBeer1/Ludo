@@ -66,6 +66,8 @@ public class Figure : MonoBehaviour
     public void Forward(int steps)
     {
         moving = true;
+        clickable = false;
+
         int centerDistance = (group.path.Count) - currentPosition;
         GameObject center = GameObject.Find("Center");
         if(inSlot != true)
@@ -94,6 +96,7 @@ public class Figure : MonoBehaviour
                 {
                     animation.Play("Skeleton|Idle");
                     moving = false;
+                    clickable = true;
                 }
             }
         }

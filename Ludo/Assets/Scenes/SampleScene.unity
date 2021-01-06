@@ -699,6 +699,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 12213373}
   clickable: 0
+  moving: 0
 --- !u!95 &12213373
 Animator:
   serializedVersion: 3
@@ -2369,6 +2370,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 116950508}
   clickable: 0
+  moving: 0
 --- !u!95 &116950508
 Animator:
   serializedVersion: 3
@@ -3504,6 +3506,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 225440979}
   clickable: 0
+  moving: 0
 --- !u!95 &225440979
 Animator:
   serializedVersion: 3
@@ -3567,6 +3570,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 228071968}
   clickable: 0
+  moving: 0
 --- !u!95 &228071968
 Animator:
   serializedVersion: 3
@@ -4422,6 +4426,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 309283245}
   clickable: 0
+  moving: 0
 --- !u!95 &309283245
 Animator:
   serializedVersion: 3
@@ -5196,6 +5201,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 384014680}
   clickable: 0
+  moving: 0
 --- !u!95 &384014680
 Animator:
   serializedVersion: 3
@@ -6263,7 +6269,7 @@ RectTransform:
   m_GameObject: {fileID: 448410137}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.70710784}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15233809, y: 0.15233809, z: 0.15233809}
+  m_LocalScale: {x: 0.12428655, y: 0.12428655, z: 0.12428655}
   m_Children:
   - {fileID: 204107933}
   m_Father: {fileID: 1041146752}
@@ -6271,7 +6277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -141.25, y: 134.9}
+  m_AnchoredPosition: {x: -131.8, y: 120.7}
   m_SizeDelta: {x: 975.77, y: 901.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &468925942
@@ -7313,6 +7319,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 599790428}
   clickable: 0
+  moving: 0
 --- !u!95 &599790428
 Animator:
   serializedVersion: 3
@@ -7536,6 +7543,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 643071395}
   clickable: 0
+  moving: 0
 --- !u!4 &643071394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: bdbfa9421a1f57440b6305952d4cf337,
@@ -10040,13 +10048,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.16159932, y: -0.36044607, z: 0.063556276, w: 0.9164742}
-  m_LocalPosition: {x: 11, y: 3, z: -0.407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.96, y: 6, z: 13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 160, y: 137.061, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11563,6 +11571,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1121307151}
   clickable: 0
+  moving: 0
 --- !u!95 &1121307151
 Animator:
   serializedVersion: 3
@@ -12105,6 +12114,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1226538040}
   clickable: 0
+  moving: 0
 --- !u!95 &1226538040
 Animator:
   serializedVersion: 3
@@ -12653,6 +12663,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1318376444}
   clickable: 0
+  moving: 0
 --- !u!95 &1318376444
 Animator:
   serializedVersion: 3
@@ -14423,6 +14434,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1497388994}
   clickable: 0
+  moving: 0
 --- !u!95 &1497388994
 Animator:
   serializedVersion: 3
@@ -14922,6 +14934,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1578836099}
   clickable: 0
+  moving: 0
 --- !u!65 &1578836101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15550,7 +15563,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1653355706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_MethodName: North
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1653355706
@@ -16075,7 +16099,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1690848748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_MethodName: West
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1690848748
@@ -16523,7 +16558,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704981507}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_MethodName: East
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1704981507
@@ -16704,6 +16750,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1715359648}
   clickable: 0
+  moving: 0
 --- !u!95 &1715359648
 Animator:
   serializedVersion: 3
@@ -16876,6 +16923,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1782665689}
   clickable: 0
+  moving: 0
 --- !u!95 &1782665689
 Animator:
   serializedVersion: 3
@@ -17648,6 +17696,7 @@ MonoBehaviour:
   inSlot: 0
   animation: {fileID: 1856548029}
   clickable: 0
+  moving: 0
 --- !u!95 &1856548029
 Animator:
   serializedVersion: 3
@@ -17870,7 +17919,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1862297373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_MethodName: South
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, Unity.ugui, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1862297373

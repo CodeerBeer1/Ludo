@@ -12,10 +12,6 @@ public class Lerp : MonoBehaviour
     float t = 0f;
     int length;
 
-    void Start()
-    {
-
-    }
     void Update()
     {
         LerpColor();

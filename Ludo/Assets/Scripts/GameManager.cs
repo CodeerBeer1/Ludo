@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     {
 
         camera = GameObject.Find("Camera").GetComponent<GameCamera>();
-        active = players[1];
+        active = players[0];
         for(int i = 0; i < active.group.figures.Count; i++)
         {
             active.group.figures[i].clickable = true;
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void Move(Figure figure, int steps)
     {
+        int centerDistance = (figure.group.path.Count) - figure.currentPosition;
         if (figure.clickable)
         {
             if (active.group.name == figure.group.name)
@@ -59,7 +60,11 @@ public class GameManager : MonoBehaviour
                 if (figure.inSlot != true)
                 {
                     figure.Forward(steps);
-                    StartCoroutine(camera.FollowFigure(figure));
+                    if (steps <= centerDistance)
+                    {
+                        StartCoroutine(camera.FollowFigure(figure));
+                    }
+                        
                 }
                    
             }

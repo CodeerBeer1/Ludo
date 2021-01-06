@@ -6,12 +6,13 @@ using UnityEngine;
 public class Figure : MonoBehaviour
 {
     public Group group;
-    [SerializeField] GameObject figure;
+    public GameObject figure;
     [SerializeField] GameObject slot;
     public int currentPosition;
     public bool inSlot;
     public Animator animation;
     public bool clickable;
+    public bool moving = false;
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class Figure : MonoBehaviour
     {
         inSlot = false;
         currentPosition = 0;
-        transform.Rotate(0, -45, 0);
+        transform.Rotate(0, -40, 0);
         transform.position = group.path[0].transform.position + new Vector3(0, group.path[0].offsetValue, 0);
 
         group.path[0].AddOccupier(this);
@@ -64,6 +65,7 @@ public class Figure : MonoBehaviour
 
     public void Forward(int steps)
     {
+        moving = true;
         int centerDistance = (group.path.Count) - currentPosition;
         GameObject center = GameObject.Find("Center");
         if(inSlot != true)
@@ -91,6 +93,7 @@ public class Figure : MonoBehaviour
                 else
                 {
                     animation.Play("Skeleton|Idle");
+                    moving = false;
                 }
             }
         }

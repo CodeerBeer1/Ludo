@@ -96,7 +96,6 @@ public class Figure : MonoBehaviour
                 {
                     animation.Play("Skeleton|Idle");
                     moving = false;
-                    clickable = true;
                 }
             }
         }

@@ -27,20 +27,22 @@ public class GameCamera : MonoBehaviour
 
     public IEnumerator FollowFigure(Figure figure)
     {
-        float right = figure.transform.right.x;
-        float forward = figure.transform.forward.z;
-        Vector3 start = transform.position = new Vector3(right, -0.8f, forward);
+        Vector3 right = -figure.transform.right;
+        Vector3 forward = -figure.transform.forward;
+        Vector3 up = figure.transform.up;
+
+        Vector3 offset = right + up + forward;
 
         while (figure.moving)
         {
-            transform.position = figure.transform.position - start;
+            transform.position = figure.transform.position + offset;
             transform.LookAt(figure.transform);
             yield return null;
         }
         yield return new WaitForSeconds(2);
-        //Top();
-        
-        
+        Top();
+        figure.clickable = true;
+
     }
 
     public void Top()

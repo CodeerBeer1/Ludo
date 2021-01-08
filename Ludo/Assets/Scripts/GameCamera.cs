@@ -1,16 +1,37 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameCamera : MonoBehaviour
 {
 
     [SerializeField] private GameObject cameraControl;
+    bool clickable = true;
     bool transtition = false;
     void Start()
     {
-        StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(90, 0, 0), 350));
+        StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(-90, 0, 0), 350));
+    }
+
+    public IEnumerator RotateCameraControl(float rotation, float letterRot)
+    {
+        Quaternion euler = Quaternion.Euler(0,0,rotation);
+        Quaternion letterEuler = Quaternion.Euler(0, 0, letterRot);
+
+        clickable = false;
+        transtition = true;
+
+        while (cameraControl.transform.rotation != euler)
+        {
+            cameraControl.transform.rotation = Quaternion.RotateTowards(cameraControl.transform.rotation, euler, Time.deltaTime * 150);
+
+            yield return null;
+        }
+        transtition = false;
+        clickable = true;
     }
 
     public IEnumerator SetViewAngle(float x, float y, float z, Quaternion rotation, int speed)
@@ -53,55 +74,100 @@ public class GameCamera : MonoBehaviour
 
     public void Top()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(90, 0, 0), 700));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(90, 0, 0), 700));
+                    StartCoroutine(RotateCameraControl(90));
+        }
+        
     }
 
     public void Blue()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(-1.5f, 3, -0.5f, Quaternion.Euler(160, -135, 180), 350));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(-1.5f, 3, -0.5f, Quaternion.Euler(160, -135, 180), 350));
+                    StartCoroutine(RotateCameraControl(135));
+        }
+        
     }
 
     public void Red()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(-1.5f, 3, 12.5f, Quaternion.Euler(160, 315, 180), 350));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(-1.5f, 3, 12.5f, Quaternion.Euler(160, 315, 180), 350));
+                    StartCoroutine(RotateCameraControl(225));
+        }
+            
     }
 
     public void Green()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(11.5f, 3, 12.5f, Quaternion.Euler(160, -315, 180), 350));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(11.5f, 3, 12.5f, Quaternion.Euler(160, -315, 180), 350));
+                    StartCoroutine(RotateCameraControl(315));
+        }
+        
     }
 
     public void Pink()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(11.5f, 3, -0.5f, Quaternion.Euler(160, 135, 180), 350));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(11.5f, 3, -0.5f, Quaternion.Euler(160, 135, 180), 350));
+                    StartCoroutine(RotateCameraControl(45));
+        }
+        
     }
 
     public void South()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(5, 6, -1.5f, Quaternion.Euler(45, 0, 0), 700));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(5, 6, -1.5f, Quaternion.Euler(45, 0, 0), 700));
+                    StartCoroutine(RotateCameraControl(90));
+        }
+        
     }
 
     public void West()
     {
-        if (!transtition)
-        StartCoroutine(SetViewAngle(-2.5f, 6, 6, Quaternion.Euler(45, 90, 0), 700));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(-2.5f, 6, 6, Quaternion.Euler(45, 90, 0), 700));
+                    StartCoroutine(RotateCameraControl(180));
+        }
+        
     }
 
     public void North()
     {
-        if (!transtition)
-            StartCoroutine(SetViewAngle(5, 6, 13.5f, Quaternion.Euler(45, 180, 0), 700));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(5, 6, 13.5f, Quaternion.Euler(45, 180, 0), 700));
+                    StartCoroutine(RotateCameraControl(270));
+        }
+        
     }
 
     public void East()
     {
-        if (!transtition)
-            StartCoroutine(SetViewAngle(12.5f, 6, 6, Quaternion.Euler(45, -90, 0), 700));
+        if (clickable)
+        {
+            if (!transtition)
+                    StartCoroutine(SetViewAngle(12.5f, 6, 6, Quaternion.Euler(45, -90, 0), 700));
+                    StartCoroutine(RotateCameraControl(360));
+        }
+        
     }
 }

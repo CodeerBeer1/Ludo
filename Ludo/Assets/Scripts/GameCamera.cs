@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameCamera : MonoBehaviour
 {
 
+    [SerializeField] private GameObject cameraControl;
     bool transtition = false;
     void Start()
     {
@@ -27,6 +28,9 @@ public class GameCamera : MonoBehaviour
 
     public IEnumerator FollowFigure(Figure figure)
     {
+        cameraControl.SetActive(false);
+        transtition = true;
+
         Vector3 right = -figure.transform.right;
         Vector3 forward = -figure.transform.forward;
         Vector3 up = figure.transform.up;
@@ -40,7 +44,9 @@ public class GameCamera : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(2);
+        transtition = false;
         Top();
+        cameraControl.SetActive(true);
         figure.clickable = true;
 
     }

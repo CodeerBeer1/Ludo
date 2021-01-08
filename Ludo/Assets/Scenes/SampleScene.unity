@@ -10067,6 +10067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fdadcb8bbe0614caa2871e00ac1637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraControl: {fileID: 448410137}
 --- !u!1 &964103127
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,6 +11099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758c8df4b7e9cc4e9ac5fda0ba33f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testindx: 1
   players:
   - {fileID: 565408142}
   - {fileID: 829641355}

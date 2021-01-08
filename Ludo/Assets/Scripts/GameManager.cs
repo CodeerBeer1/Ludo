@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    [SerializeField] int testindx;
     [SerializeField] List<Player> players;
     private Player active;
     private GameCamera camera;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     {
 
         camera = GameObject.Find("Camera").GetComponent<GameCamera>();
-        active = players[0];
+        active = players[testindx];
         for(int i = 0; i < active.group.figures.Count; i++)
         {
             active.group.figures[i].clickable = true;

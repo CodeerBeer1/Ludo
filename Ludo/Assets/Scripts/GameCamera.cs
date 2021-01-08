@@ -16,22 +16,16 @@ public class GameCamera : MonoBehaviour
         StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(-90, 0, 0), 350));
     }
 
-    public IEnumerator RotateCameraControl(float rotation, float letterRot)
+    public IEnumerator RotateCameraControl(float rotation)
     {
         Quaternion euler = Quaternion.Euler(0,0,rotation);
-        Quaternion letterEuler = Quaternion.Euler(0, 0, letterRot);
-
-        clickable = false;
-        transtition = true;
 
         while (cameraControl.transform.rotation != euler)
         {
-            cameraControl.transform.rotation = Quaternion.RotateTowards(cameraControl.transform.rotation, euler, Time.deltaTime * 150);
+            cameraControl.transform.rotation = Quaternion.RotateTowards(cameraControl.transform.rotation, euler, Time.deltaTime * 350);
 
             yield return null;
         }
-        transtition = false;
-        clickable = true;
     }
 
     public IEnumerator SetViewAngle(float x, float y, float z, Quaternion rotation, int speed)
@@ -39,12 +33,13 @@ public class GameCamera : MonoBehaviour
         while (transform.position != new Vector3(x, y, z))
         {
             transtition = true;
+            clickable = false;
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(x, y, z), Time.deltaTime * 25);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, Time.deltaTime * speed);
             yield return null;
         }
         transtition = false;
-
+        clickable = true;
     }
 
     public IEnumerator FollowFigure(Figure figure)
@@ -77,6 +72,7 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
+                print("going");
                     StartCoroutine(SetViewAngle(5, 9, 6, Quaternion.Euler(90, 0, 0), 700));
                     StartCoroutine(RotateCameraControl(90));
         }
@@ -88,7 +84,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(-1.5f, 3, -0.5f, Quaternion.Euler(160, -135, 180), 350));
+                print("going");
+            StartCoroutine(SetViewAngle(-1.5f, 3, -0.5f, Quaternion.Euler(160, -135, 180), 350));
                     StartCoroutine(RotateCameraControl(135));
         }
         
@@ -99,7 +96,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(-1.5f, 3, 12.5f, Quaternion.Euler(160, 315, 180), 350));
+                print("going");
+            StartCoroutine(SetViewAngle(-1.5f, 3, 12.5f, Quaternion.Euler(160, 315, 180), 350));
                     StartCoroutine(RotateCameraControl(225));
         }
             
@@ -110,7 +108,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(11.5f, 3, 12.5f, Quaternion.Euler(160, -315, 180), 350));
+                print("going");
+            StartCoroutine(SetViewAngle(11.5f, 3, 12.5f, Quaternion.Euler(160, -315, 180), 350));
                     StartCoroutine(RotateCameraControl(315));
         }
         
@@ -121,7 +120,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(11.5f, 3, -0.5f, Quaternion.Euler(160, 135, 180), 350));
+                print("going");
+            StartCoroutine(SetViewAngle(11.5f, 3, -0.5f, Quaternion.Euler(160, 135, 180), 350));
                     StartCoroutine(RotateCameraControl(45));
         }
         
@@ -132,7 +132,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(5, 6, -1.5f, Quaternion.Euler(45, 0, 0), 700));
+                print("going");
+            StartCoroutine(SetViewAngle(5, 6, -1.5f, Quaternion.Euler(45, 0, 0), 700));
                     StartCoroutine(RotateCameraControl(90));
         }
         
@@ -143,7 +144,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(-2.5f, 6, 6, Quaternion.Euler(45, 90, 0), 700));
+                print("going");
+            StartCoroutine(SetViewAngle(-2.5f, 6, 6, Quaternion.Euler(45, 90, 0), 700));
                     StartCoroutine(RotateCameraControl(180));
         }
         
@@ -154,7 +156,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(5, 6, 13.5f, Quaternion.Euler(45, 180, 0), 700));
+                print("going");
+            StartCoroutine(SetViewAngle(5, 6, 13.5f, Quaternion.Euler(45, 180, 0), 700));
                     StartCoroutine(RotateCameraControl(270));
         }
         
@@ -165,7 +168,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-                    StartCoroutine(SetViewAngle(12.5f, 6, 6, Quaternion.Euler(45, -90, 0), 700));
+                print("going");
+            StartCoroutine(SetViewAngle(12.5f, 6, 6, Quaternion.Euler(45, -90, 0), 700));
                     StartCoroutine(RotateCameraControl(360));
         }
         

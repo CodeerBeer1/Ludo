@@ -17,21 +17,12 @@ public class Figure : MonoBehaviour
     void Start()
     {
         inSlot = true;
-        transform.position = slot.transform.position + slot.transform.up / 1.9f;
+        transform.localPosition = slot.transform.localPosition + new Vector3(0, 4, 0);
         currentPosition = 0;
         animation.Play("Skeleton|Idle");
 
     }
 
-    void OnMouseOff()
-    {
-        GameManager manager = GameObject.Find("Board").GetComponent<GameManager>();
-        if (clickable)
-        {
-            if (manager.GiveActivePlayer().group.name == group.name)
-                transform.position = Vector3.MoveTowards(transform.position, transform.position - new Vector3(0, 1f, 0), Time.deltaTime);
-        }
-    }
 
     void OnMouseDown()
     {
@@ -48,7 +39,8 @@ public class Figure : MonoBehaviour
         inSlot = false;
         currentPosition = 0;
         transform.Rotate(0, -40, 0);
-        transform.position = group.path[0].transform.position + group.path[0].transform.up * group.path[0].offsetValue;
+        transform.parent = group.path[0].transform;
+        transform.localPosition = new Vector3(0, group.path[0].offsetValue, 0);
 
         group.path[0].AddOccupier(this);
     }
@@ -57,8 +49,9 @@ public class Figure : MonoBehaviour
     {
         group.path[currentPosition].RemoveOccupier(this);
         inSlot = true;
-        transform.position = slot.transform.position + new Vector3(0, 0.53f, 0);
-        transform.eulerAngles = new Vector3(0, group.slotRotation, 0);
+        transform.parent = slot.transform;
+        transform.localPosition = slot.transform.localPosition + new Vector3(0, 4, 0);
+        //transform.localEulerAngles = ;
         currentPosition = 0;
     }
 
@@ -85,6 +78,7 @@ public class Figure : MonoBehaviour
                     {
                         group.path[currentPosition].RemoveOccupier(this);
                         currentPosition ++;
+                        transform.parent = group.path[currentPosition].transform;
                         StartCoroutine(MoveFigure(currentPosition, steps));
                         
                         group.path[currentPosition].AddOccupier(this);
@@ -105,9 +99,9 @@ public class Figure : MonoBehaviour
     {
         animation.Play("Skeleton|Walking");
         float offset = group.path[position].offsetValue;
-        while(transform.position != group.path[position].transform.position + group.path[position].transform.up * offset)
+        while(transform.localPosition != new Vector3(0, group.path[position].offsetValue, 0))
         {
-            transform.position = Vector3.MoveTowards(transform.position, group.path[position].transform.position + group.path[position].transform.up * offset, Time.deltaTime * 2f);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(0, group.path[position].offsetValue, 0), Time.deltaTime * 5f);
             yield return null;
         }
 

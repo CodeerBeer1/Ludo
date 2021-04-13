@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+    [SerializeField] Rigidbody rb;
+    void Start()
+    {
+
+    }
     void Update()
     {
-        transform.eulerAngles += new Vector3(0, 0, 0.5f);
+        transform.eulerAngles += new Vector3(0, 0, 0.01f);
     }
 
 }

@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     public void ReturnFigure(Figure figure)
     {
         GameManager manager = GameObject.Find("Board").GetComponent<GameManager>();
-        
         manager.Return(figure);
     }
 
@@ -42,7 +41,7 @@ public class Player : MonoBehaviour
         else if(figure.inSlot == false)
         {
             int value = Random.Range(1,6);
-            MoveForward(figure, 4);
+            MoveForward(figure, 6);
         }
     }
 }

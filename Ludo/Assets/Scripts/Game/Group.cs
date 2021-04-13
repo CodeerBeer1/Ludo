@@ -9,9 +9,21 @@ public class Group : MonoBehaviour
     [SerializeField] string name;
     public List<Figure> figures;
     public List<Tile> path;
-    public int slotRotation;
+    [SerializeField] private Vector3 slotRotation;
+    [SerializeField] private Vector3 setup;
 
     private List<string> souls;
+
+    void Start()
+    {
+        transform.localPosition = setup;
+        transform.localEulerAngles = slotRotation;
+    }
+
+    public Vector3 GiveSlotRotation()
+    {
+        return slotRotation;
+    }
 
     public void AddSoul()
     {

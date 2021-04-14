@@ -11,7 +11,7 @@ public class Planet : MonoBehaviour
     }
     void Update()
     {
-        transform.eulerAngles += new Vector3(0, 0, 0.01f);
+        transform.eulerAngles -= new Vector3(0, 0, 0.01f);
     }
 
 }

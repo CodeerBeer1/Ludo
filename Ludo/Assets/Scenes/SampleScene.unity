@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.86
+  offsetValue: 2.15
   rotateValue: 0
 --- !u!1001 &77273929
 PrefabInstance:
@@ -3072,7 +3072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.58
+  offsetValue: 4.75
   rotateValue: 0
 --- !u!1 &147980467
 GameObject:
@@ -3486,7 +3486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.86
+  offsetValue: 2.15
   rotateValue: 0
 --- !u!1 &176547818
 GameObject:
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.86
+  offsetValue: 2.15
   rotateValue: 0
 --- !u!1 &194855787
 GameObject:
@@ -5419,7 +5419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.89
+  offsetValue: 2.1
   rotateValue: 0
 --- !u!1 &384014677 stripped
 GameObject:
@@ -5701,7 +5701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.76
+  offsetValue: 2.5
   rotateValue: 0
 --- !u!1 &410869838
 GameObject:
@@ -7049,7 +7049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.86
+  offsetValue: 2.15
   rotateValue: 0
 --- !u!4 &568380645 stripped
 Transform:
@@ -7164,7 +7164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.71
+  offsetValue: 2.75
   rotateValue: 0
 --- !u!1 &577616990
 GameObject:
@@ -7609,7 +7609,76 @@ MonoBehaviour:
   - {fileID: 12213372}
   - {fileID: 1856548028}
   - {fileID: 384014679}
-  path: []
+  path:
+  - {fileID: 1602535133}
+  - {fileID: 713402537}
+  - {fileID: 9758342}
+  - {fileID: 743336411}
+  - {fileID: 443782121}
+  - {fileID: 235947802}
+  - {fileID: 287489652}
+  - {fileID: 878414096}
+  - {fileID: 164505961}
+  - {fileID: 423578742}
+  - {fileID: 2051157533}
+  - {fileID: 360762593}
+  - {fileID: 7919769}
+  - {fileID: 1804285546}
+  - {fileID: 131405894}
+  - {fileID: 1786266357}
+  - {fileID: 913532644}
+  - {fileID: 96063171}
+  - {fileID: 353317283}
+  - {fileID: 601510563}
+  - {fileID: 860087176}
+  - {fileID: 410869843}
+  - {fileID: 1858479265}
+  - {fileID: 1515629264}
+  - {fileID: 590784230}
+  - {fileID: 468925947}
+  - {fileID: 812776427}
+  - {fileID: 1875720349}
+  - {fileID: 562989795}
+  - {fileID: 986251298}
+  - {fileID: 1692180208}
+  - {fileID: 1084187985}
+  - {fileID: 1266223404}
+  - {fileID: 78151047}
+  - {fileID: 973265384}
+  - {fileID: 140384547}
+  - {fileID: 320100686}
+  - {fileID: 329323994}
+  - {fileID: 1808841893}
+  - {fileID: 488351767}
+  - {fileID: 1592759099}
+  - {fileID: 283007464}
+  - {fileID: 1343323627}
+  - {fileID: 918409944}
+  - {fileID: 972802862}
+  - {fileID: 36506847}
+  - {fileID: 1066507670}
+  - {fileID: 255866852}
+  - {fileID: 1811521901}
+  - {fileID: 1707849831}
+  - {fileID: 1036205644}
+  - {fileID: 387194680}
+  - {fileID: 893139576}
+  - {fileID: 2002324831}
+  - {fileID: 1273935444}
+  - {fileID: 1565761486}
+  - {fileID: 57053694}
+  - {fileID: 413644344}
+  - {fileID: 1378011194}
+  - {fileID: 1635730434}
+  - {fileID: 2126987216}
+  - {fileID: 1119151408}
+  - {fileID: 1257022063}
+  - {fileID: 1050236929}
+  - {fileID: 2117562766}
+  - {fileID: 1749078737}
+  - {fileID: 826266519}
+  - {fileID: 57499655}
+  - {fileID: 921447036}
   slotRotation: {x: 0, y: 225, z: 0}
   setup: {x: 0.25, y: 1, z: 0.25}
 --- !u!1 &641097650
@@ -8238,7 +8307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.63
+  offsetValue: 3.5
   rotateValue: 0
 --- !u!1 &743336406
 GameObject:
@@ -8655,7 +8724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.89
+  offsetValue: 2.1
   rotateValue: 0
 --- !u!1 &800984544
 GameObject:
@@ -8764,7 +8833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.63
+  offsetValue: 3.5
   rotateValue: 0
 --- !u!1 &812776422
 GameObject:
@@ -8982,7 +9051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.76
+  offsetValue: 2.5
   rotateValue: 0
 --- !u!1 &829641353
 GameObject:
@@ -9880,7 +9949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.89
+  offsetValue: 2.1
   rotateValue: 0
 --- !u!1 &939782396
 GameObject:
@@ -10393,7 +10462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.58
+  offsetValue: 4.75
   rotateValue: 0
 --- !u!1 &972802857
 GameObject:
@@ -10865,7 +10934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.89
+  offsetValue: 2.1
   rotateValue: 0
 --- !u!1 &1036205639
 GameObject:
@@ -11182,7 +11251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.58
+  offsetValue: 4.75
   rotateValue: 0
 --- !u!1 &1066081224
 GameObject:
@@ -11319,7 +11388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758c8df4b7e9cc4e9ac5fda0ba33f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testindx: 1
+  testindx: 2
   players:
   - {fileID: 565408142}
   - {fileID: 829641355}
@@ -11542,7 +11611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.63
+  offsetValue: 3.5
   rotateValue: 0
 --- !u!1 &1084187980
 GameObject:
@@ -14076,7 +14145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.71
+  offsetValue: 2.75
   rotateValue: 0
 --- !u!1 &1422069959
 GameObject:
@@ -16045,7 +16114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.76
+  offsetValue: 2.5
   rotateValue: 0
 --- !u!1 &1690848745
 GameObject:
@@ -16396,7 +16465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.71
+  offsetValue: 2.75
   rotateValue: 0
 --- !u!1 &1696253946
 GameObject:
@@ -16917,7 +16986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.71
+  offsetValue: 2.75
   rotateValue: 0
 --- !u!1 &1773411795
 GameObject:
@@ -17304,7 +17373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.76
+  offsetValue: 2.5
   rotateValue: 0
 --- !u!1 &1786266352
 GameObject:
@@ -17903,7 +17972,76 @@ MonoBehaviour:
   - {fileID: 116950507}
   - {fileID: 1782665688}
   - {fileID: 1715359647}
-  path: []
+  path:
+  - {fileID: 913532644}
+  - {fileID: 96063171}
+  - {fileID: 353317283}
+  - {fileID: 601510563}
+  - {fileID: 860087176}
+  - {fileID: 410869843}
+  - {fileID: 1858479265}
+  - {fileID: 1515629264}
+  - {fileID: 590784230}
+  - {fileID: 468925947}
+  - {fileID: 812776427}
+  - {fileID: 1875720349}
+  - {fileID: 562989795}
+  - {fileID: 986251298}
+  - {fileID: 1692180208}
+  - {fileID: 1084187985}
+  - {fileID: 1266223404}
+  - {fileID: 78151047}
+  - {fileID: 973265384}
+  - {fileID: 140384547}
+  - {fileID: 320100686}
+  - {fileID: 329323994}
+  - {fileID: 1808841893}
+  - {fileID: 488351767}
+  - {fileID: 1592759099}
+  - {fileID: 283007464}
+  - {fileID: 1343323627}
+  - {fileID: 918409944}
+  - {fileID: 972802862}
+  - {fileID: 36506847}
+  - {fileID: 1066507670}
+  - {fileID: 255866852}
+  - {fileID: 1811521901}
+  - {fileID: 1707849831}
+  - {fileID: 1036205644}
+  - {fileID: 387194680}
+  - {fileID: 893139576}
+  - {fileID: 2002324831}
+  - {fileID: 1273935444}
+  - {fileID: 1565761486}
+  - {fileID: 57053694}
+  - {fileID: 413644344}
+  - {fileID: 1378011194}
+  - {fileID: 1635730434}
+  - {fileID: 2126987216}
+  - {fileID: 1119151408}
+  - {fileID: 1257022063}
+  - {fileID: 2144850054}
+  - {fileID: 1602535133}
+  - {fileID: 713402537}
+  - {fileID: 9758342}
+  - {fileID: 743336411}
+  - {fileID: 443782121}
+  - {fileID: 235947802}
+  - {fileID: 287489652}
+  - {fileID: 878414096}
+  - {fileID: 164505961}
+  - {fileID: 423578742}
+  - {fileID: 2051157533}
+  - {fileID: 360762593}
+  - {fileID: 7919769}
+  - {fileID: 1804285546}
+  - {fileID: 131405894}
+  - {fileID: 146296248}
+  - {fileID: 1070355334}
+  - {fileID: 1695392933}
+  - {fileID: 1690560042}
+  - {fileID: 567381489}
+  - {fileID: 766942970}
   slotRotation: {x: 0, y: 315, z: 0}
   setup: {x: 0.25, y: 1, z: -0.25}
 --- !u!1 &1856548026 stripped
@@ -18331,7 +18469,7 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 500000
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18529,7 +18667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.58
+  offsetValue: 4.75
   rotateValue: 0
 --- !u!1 &1944557789
 GameObject:
@@ -19992,7 +20130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   occupiers: []
-  offsetValue: 0.63
+  offsetValue: 3.5
   rotateValue: 0
 --- !u!1 &2126987211
 GameObject:

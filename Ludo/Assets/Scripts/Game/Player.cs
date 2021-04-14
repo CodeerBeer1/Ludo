@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         else if(figure.inSlot == false)
         {
             int value = Random.Range(1,6);
-            MoveForward(figure, 6);
+            MoveForward(figure, 68);
         }
     }
 }

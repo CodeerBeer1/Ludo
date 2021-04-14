@@ -11,6 +11,7 @@ public class GameCamera : MonoBehaviour
     [SerializeField] private GameObject cameraControl;
     bool clickable = true;
     bool transtition = false;
+
     void Start()
     {
         Top();
@@ -38,13 +39,17 @@ public class GameCamera : MonoBehaviour
         while (transform.localPosition != new Vector3(x, y, z))
         {
             print("doing");
+
             transtition = true;
             clickable = false;
+
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, new Vector3(x, y, z), Time.deltaTime * speed);
             Quaternion rot = Quaternion.LookRotation(board.transform.position + up - transform.position, forward);
             transform.rotation = rot;
+
             yield return null;
         }
+
         transtition = false;
         clickable = true;
     }
@@ -66,10 +71,14 @@ public class GameCamera : MonoBehaviour
             transform.LookAt(figure.transform, board.transform.up);
             yield return null;
         }
+
         yield return new WaitForSeconds(2);
+
         transtition = false;
         cameraControl.SetActive(true);
+
         Top();
+
         figure.clickable = true;
 
     }
@@ -90,46 +99,47 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(-0.5f, 10, -0.5f, 50, board.transform.up, board.transform.up));
+            StartCoroutine(SetViewAngle(-0.5f, 10, -0.5f, 40, board.transform.up, board.transform.up));
             StartCoroutine(RotateCameraControl(45));
 
         }
 
     }
-    /*
+    
     public void Red()
     {
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(-1.5f, 3, 12.5f, Quaternion.Euler(160, 315, 180), 350));
+            StartCoroutine(SetViewAngle(-0.5f, 10, 0.5f, 40, board.transform.up, board.transform.up));
             StartCoroutine(RotateCameraControl(135));
         }
 
     }
-
+    
     public void Green()
     {
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(11.5f, 3, 12.5f, Quaternion.Euler(160, -315, 180), 350));
+            StartCoroutine(SetViewAngle(0.5f, 10, 0.5f, 40, board.transform.up, board.transform.up));
             StartCoroutine(RotateCameraControl(-135));
         }
 
     }
+
 
     public void Pink()
     {
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(11.5f, 3, -0.5f, Quaternion.Euler(160, 135, 180), 350));
+            StartCoroutine(SetViewAngle(0.5f, 10, -0.5f, 40, board.transform.up, board.transform.up));
             StartCoroutine(RotateCameraControl(315));
         }
 
     }
-
+    /*
     public void South()
     {
         if (clickable)

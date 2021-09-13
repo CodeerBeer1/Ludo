@@ -11,11 +11,96 @@ public class GameCamera : MonoBehaviour
     [SerializeField] private GameObject cameraControl;
     bool clickable = true;
     bool transtition = false;
+    Quaternion rotation;
+    public GameObject pivotPoint;
+    public Angles angles;
+
+    public enum Angles
+    {
+        TOP,
+        BLUE,
+        RED,
+        GREEN,
+        PINK
+    };
 
     void Start()
     {
-        Top();
-        
+        Move(angles);
+    }
+
+
+    public void DroneCamera()
+    {
+        StartCoroutine(ActivateDrone());
+        transform.LookAt(null);
+
+    }
+
+    public IEnumerator ActivateDrone()
+    {
+        Transform obj = transform;
+
+        obj.transform.localPosition = new Vector3(0, 0, 0.025f);
+        obj.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+        while (true)
+        {
+            rotation.x -= Input.GetAxis("Mouse Y") * 10;
+            rotation.y += Input.GetAxis("Mouse X") * 10;
+            obj.transform.localRotation = Quaternion.Euler(rotation.x, Mathf.Clamp(rotation.x, 20, 160), rotation.z);
+            
+            if(Input.GetKey(KeyCode.W))
+            {
+                obj.transform.localPosition += new Vector3(transform.forward.x * 0.0001f, transform.forward.y * 0.0001f, transform.forward.z * 0.0001f);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                obj.transform.localPosition += new Vector3(-transform.forward.x * 0.0001f, -transform.forward.y * 0.0001f, -transform.forward.z * 0.0001f);
+            }
+            yield return null;
+        }
+    }
+    public void Move(Angles angle)
+    {
+        switch(angle)
+        {
+            case Angles.TOP:
+                if (clickable)
+                pivotPoint.transform.localPosition = new Vector3(0, 0, 0.025f);
+                pivotPoint.transform.LookAt(board.transform, board.transform.forward);
+                StartCoroutine(RotateCameraControl(0));
+                break;
+
+            case Angles.BLUE:
+                if (clickable)
+                pivotPoint.transform.localPosition = new Vector3(-0.0125f, 0, 0.0125f);
+                pivotPoint.transform.LookAt(board.transform, board.transform.forward);
+                StartCoroutine(RotateCameraControl(90));
+                break;
+
+            case Angles.RED:
+                if (clickable)
+                pivotPoint.transform.localPosition = new Vector3(0, -0.0125f, 0.0125f);
+                pivotPoint.transform.LookAt(board.transform, board.transform.forward);
+                StartCoroutine(RotateCameraControl(180));
+                break;
+
+            case Angles.GREEN:
+                if (clickable)
+                pivotPoint.transform.localPosition = new Vector3(0.0125f, 0, 0.0125f);
+                pivotPoint.transform.LookAt(board.transform, board.transform.forward);
+                StartCoroutine(RotateCameraControl(-90));
+                break;
+
+            case Angles.PINK:
+                if (clickable)
+                pivotPoint.transform.localPosition = new Vector3(0, 0.0125f, 0.0125f);
+                pivotPoint.transform.LookAt(board.transform, board.transform.forward);
+                StartCoroutine(RotateCameraControl(0));
+                break;
+        }
     }
 
     public IEnumerator RotateCameraControl(float rotation)
@@ -23,6 +108,7 @@ public class GameCamera : MonoBehaviour
         Quaternion euler = Quaternion.Euler(0,0,rotation);
         GameObject[] letters = GameObject.FindGameObjectsWithTag("direction");
 
+        clickable = false;
         while (cameraControl.transform.rotation != euler)
         {
             cameraControl.transform.rotation = Quaternion.RotateTowards(cameraControl.transform.rotation, euler, Time.deltaTime * 350);
@@ -32,9 +118,10 @@ public class GameCamera : MonoBehaviour
             }
             yield return null;
         }
+        clickable = true;
     }
 
-    public IEnumerator SetViewAngle(float x, float y, float z, int speed, Vector3 up, Vector3 forward)
+/*    public IEnumerator SetViewAngle(float x, float y, float z, float speed, Vector3 up, Vector3 forward)
     {            
         while (transform.localPosition != new Vector3(x, y, z))
         {
@@ -52,10 +139,11 @@ public class GameCamera : MonoBehaviour
 
         transtition = false;
         clickable = true;
-    }
+    }*/
 
     public IEnumerator FollowFigure(Figure figure)
     {
+
         cameraControl.SetActive(false);
         transtition = true;
 
@@ -88,8 +176,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(0, 18, 0, 40, board.transform.up, board.transform.forward));
-            StartCoroutine(RotateCameraControl(0));
+            angles = Angles.TOP;
+            Move(angles);
         }
 
     }
@@ -99,8 +187,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(-0.5f, 10, -0.5f, 40, board.transform.up, board.transform.up));
-            StartCoroutine(RotateCameraControl(45));
+            angles = Angles.BLUE;
+            Move(angles);
 
         }
 
@@ -111,8 +199,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(-0.5f, 10, 0.5f, 40, board.transform.up, board.transform.up));
-            StartCoroutine(RotateCameraControl(135));
+            angles = Angles.RED;
+            Move(angles);
         }
 
     }
@@ -122,8 +210,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(0.5f, 10, 0.5f, 40, board.transform.up, board.transform.up));
-            StartCoroutine(RotateCameraControl(-135));
+            angles = Angles.GREEN;
+            Move(angles);
         }
 
     }
@@ -134,8 +222,8 @@ public class GameCamera : MonoBehaviour
         if (clickable)
         {
             if (!transtition)
-            StartCoroutine(SetViewAngle(0.5f, 10, -0.5f, 40, board.transform.up, board.transform.up));
-            StartCoroutine(RotateCameraControl(315));
+            angles = Angles.PINK;
+            Move(angles);
         }
 
     }

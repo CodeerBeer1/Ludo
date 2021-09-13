@@ -7,19 +7,20 @@ public class Figure : MonoBehaviour
 {
     public Group group;
     public GameObject figure;
-    [SerializeField] GameObject slot;
+    [SerializeField] Slot slot;
     public int currentPosition;
     public bool inSlot;
     public Animator animation;
     public bool clickable;
     public bool moving = false;
+    public Material color;
 
     void Start()
     {
+
+        transform.parent = slot.transform;
         inSlot = true;
-        transform.localPosition = slot.transform.localPosition + new Vector3(0, 4, 0);
         currentPosition = 0;
-        animation.Play("Skeleton|Idle");
 
     }
 
@@ -87,7 +88,7 @@ public class Figure : MonoBehaviour
                 }
                 else
                 {
-                    animation.Play("Skeleton|Idle");
+                    //animation.Play("Skeleton|Idle");
                     moving = false;
                 }
             }

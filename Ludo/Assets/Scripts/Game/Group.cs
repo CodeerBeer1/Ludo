@@ -7,8 +7,12 @@ public class Group : MonoBehaviour
 {
     public Player player;
     [SerializeField] string name;
+    public Material color;
     public List<Figure> figures;
+    public List<Slot> slots;
     public List<Tile> path;
+
+
     [SerializeField] private Vector3 slotRotation;
     [SerializeField] private Vector3 setup;
 

@@ -5,21 +5,29 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] int testindx;
     [SerializeField] List<Player> players;
-    private Player active;
     private GameCamera camera;
-
+    public Player active;
     void Start()
     {
-
         camera = GameObject.Find("Camera").GetComponent<GameCamera>();
-        active = players[testindx];
         for(int i = 0; i < active.group.figures.Count; i++)
         {
             active.group.figures[i].clickable = true;
         }
-        
+
+        SwitchTurn();
+    }
+
+    public void SwitchTurn()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (players[i].isActive == true)
+            {
+                active = players[i];
+            }
+        }
     }
 
     public Player GiveActivePlayer()
@@ -65,6 +73,8 @@ public class GameManager : MonoBehaviour
                     {
                         StartCoroutine(camera.FollowFigure(figure));
                     }
+
+                    SwitchTurn();
                         
                 }
                    

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] string name;
     public Group group;
+    public bool isActive;
 
     void Start()
     {

@@ -18,7 +18,7 @@ public class LerpUI : MonoBehaviour
     {
         img = GetComponent<Image>();
         center = GameObject.Find("Center");
-        color = center.GetComponent<Lerp>().GiveColors();
+        //color = center.GetComponent<Lerp>().GiveColors();
 
 
     }
@@ -29,7 +29,7 @@ public class LerpUI : MonoBehaviour
 
     void LerpColor()
     {
-        img.color = Color.Lerp(img.color, color[colorIndex], lerpTime * Time.deltaTime);
+        img.color = Color.Lerp(img.color, color[colorIndex], lerpTime * Time.deltaTime); 
         t = Mathf.Lerp(t, 1f, lerpTime * Time.deltaTime);
         length = color.Length;
 
